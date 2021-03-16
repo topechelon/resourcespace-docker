@@ -12,12 +12,12 @@ php7-mysqli php7-dev php7-intl imagemagick ffmpeg ghostscript exiftool subversio
 
 ARG VERSION
 
-RUN svn co http://svn.resourcespace.com/svn/rs/releases/$VERSION/ ./var/www/app
+RUN svn co http://svn.resourcespace.com/svn/rs/releases/$VERSION/ ./var/www/app \
+&& echo $VERSION > /version.txt
 
 ADD docker/ /
-VOLUME /var/www/app/filestore
 
-RUN echo $VERSION > /version.txt
+VOLUME /storage/filestore
 
 ENTRYPOINT []
 CMD ["/usr/local/bin/entrypoint.sh"]
