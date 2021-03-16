@@ -17,7 +17,7 @@ RUN svn co http://svn.resourcespace.com/svn/rs/releases/$VERSION/ ./var/www/app 
 
 ADD docker/ /
 
-VOLUME /storage/filestore
+VOLUME /storage
 
 ENTRYPOINT []
 CMD ["/usr/local/bin/entrypoint.sh"]
