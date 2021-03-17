@@ -1,1 +1,2 @@
 0 8 * * * cd /var/www/app && ./cli cronjob >/dev/null 2>&1
+0 3 * * * /usr/local/bin/backup.sh ten-bak /storage/backup /storage/filestore /var/www/app/include/config.php >/dev/null 2>&1
